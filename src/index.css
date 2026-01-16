@@ -1,0 +1,13 @@
+@import "tailwindcss";
+ 
+body{
+    background-color: black;
+    color: white;
+}
+
+/* Hide scrollbar but allow scroll */
+#tasklist::-webkit-scrollbar {
+  display: none;
+}
+
+
