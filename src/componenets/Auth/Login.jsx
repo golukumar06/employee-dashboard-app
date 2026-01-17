@@ -1,17 +1,22 @@
 import React, { useState } from "react";
+import SignUp from "./SignUp";
 
 const Login = ({handleLogin}) => {
      
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
 
-
+    const[isSubmit,setIsSubmit] = useState(false)
     const SubmitHandler = (e)=>{
         e.preventDefault();
         handleLogin(email,password)
         setEmail("")
         setPassword("")
 
+    }
+
+    if(isSubmit){
+        return <SignUp/>
     }
     return (
         <>
@@ -38,7 +43,9 @@ const Login = ({handleLogin}) => {
                     className="placeholder:text-white outline-none bg-transparent border-2 mt-4  border-emerald-600 rounded-full px-5 py-3 text-xl " type="password" placeholder="Enter your password" />
                     <button 
                      className="placeholder:text-white outline-none border-none bg-emerald-600 mt-4 rounded-full px-5 py-2 text-xl ">Log in</button>
+                <button onClick={()=>setIsSubmit(true)} className="bg-pink-500 mt-5 px-5 py-2 rounded-full text-sm ">Sign Up</button>
                 </form>
+
 
             </div>
 
